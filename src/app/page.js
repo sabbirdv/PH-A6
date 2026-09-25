@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Hero from "./components/Hero";
-import Libary from "./components/Libary";
+import Libary from "./libarys/page";
 
 export default function Home() {
   return (

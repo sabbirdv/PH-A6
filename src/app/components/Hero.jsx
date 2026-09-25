@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import React from 'react';
-import heroImg from '@/assets/banner.png';
+import heroImg from '../../assets/banner.png';
 
 const Hero = () => {
     return (
         <div className='container mx-auto py-12'>
-            <div className='border border-[#222630] bg-[#15171D] rounded-xl py-18 px-14 max-sm:text-center flex flex-col sm:flex-row gap-10 justify-between items-center'>
+            <div className='max-w-250 mx-auto border border-[#222630] bg-[#15171D] rounded-xl py-18 px-14 max-sm:text-center flex flex-col sm:flex-row gap-10 justify-between items-center'>
                 <div className='flex flex-col max-sm:items-center justify-center gap-5'>
                     <span className='uppercase text-xs font-bold text-[#C2F800]'>WORKOUT LIBRARY</span>
                     <h2 className='uppercase text-4xl font-extrabold max-w-135'>

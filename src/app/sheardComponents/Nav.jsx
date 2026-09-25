@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import logo from '@/assets/logo.png';
+import logo from '../../assets/logo.png';
 import { usePathname } from 'next/navigation';
 
 
@@ -13,7 +13,7 @@ const Nav = () => {
             <div className='h-20 navbar shadow-sm flex gap-5 items-center justify-center container mx-auto'>
                 <div className="navbar-start lg:hidden">
                     <div className="dropdown">
-                    <div tabIndex={0} role="button" className="btn bg-black border border-[#C2F800] shadow-none ">
+                    <div tabIndex={0} role="button" className="btn bg-black border border-[#C2F800]/50 shadow-none ">
                         <svg aria-label="Menu" xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="#C2F800" viewBox="0 0 24 24" stroke="#C2F800"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
                     </div>
                     <ul
@@ -47,8 +47,8 @@ const Nav = () => {
                     </ul>
                 </div>
                 <div className="navbar-end text-[#9CA3AF] text-sm font-medium flex items-center gap-2 sm:gap-6">
-                    <li className='flex items-center gap-2 font-medium'><Link href='/'>Plan </Link> <span className='size-5 rounded-full flex justify-center items-center font-bold text-black bg-[#C2F800]'>0</span></li>
-                    <li className='flex items-center gap-2 font-medium'><Link href='/'>Saved </Link> <span className='size-6 rounded-full flex justify-center items-center font-bold text-white border border-[#2D313B]'>0</span></li>
+                    <li className='flex items-center gap-2 font-medium'><Link href='/my-plan'>Plan </Link> <span className='size-5 rounded-full flex justify-center items-center font-bold text-black bg-[#C2F800]'>0</span></li>
+                    <li className='flex items-center gap-2 font-medium'><Link href='/my-plan'>Saved </Link> <span className='size-6 rounded-full flex justify-center items-center font-bold text-white border border-[#2D313B]'>0</span></li>
                 </div>
             </div>
         </div>

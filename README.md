@@ -13,7 +13,6 @@ Fitlog Api:
 All data:
 https://api.abcz.workers.dev/api/fitlog
 
-
 Details/Single Data:
 https://api.abcz.workers.dev/api/fitlog/:id
 
