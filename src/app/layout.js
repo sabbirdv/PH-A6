@@ -1,9 +1,10 @@
-import { Inter } from "next/font/google";
 import React from 'react';
 import "./globals.css";
+import { Inter } from "next/font/google";
 import { ToastContainer } from "react-toastify";
 import Nav from "./sheardComponents/Nav";
 import Footer from "./sheardComponents/Footer";
+import MyPlanContext from './context/MyPlanContext';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
       className={`${inter.className} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col ">
+        <MyPlanContext>
         
         <Nav/>
         
@@ -32,6 +34,7 @@ export default function RootLayout({ children }) {
         
         <Footer/>
         <ToastContainer />
+        </MyPlanContext>
         </body>
     </html>
   );
