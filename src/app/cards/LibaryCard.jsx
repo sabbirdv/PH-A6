@@ -6,7 +6,6 @@ import { FaStar } from 'react-icons/fa';
 import { IoTimeOutline } from "react-icons/io5";
 
 const LibaryCard = ({data}) => {
-    console.log(data)
     return (
         <Link href={`/libarys/${data.id}`}>
             <div className="w-65 overflow-hidden rounded-2xl border border-[#292e35] hover:border-[#C2F800] bg-[#15181e] shadow-lg cursor-pointer">

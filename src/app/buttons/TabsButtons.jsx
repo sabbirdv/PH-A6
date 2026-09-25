@@ -5,9 +5,9 @@ import NothingHere from '../cards/NothingHere';
 import TodaysCard from '../cards/TodaysCard';
 import SavedCard from '../cards/SavedCard';
 
-const TabsButton = () => {
+const TabsButtons = () => {
 
-    const {activeTab, setActiveTab} = useContext(GymContext)
+    const {activeTab, setActiveTab, todaysData, savedData} = useContext(GymContext)
 
     const handleTabs = ()=>{
         if(activeTab === "today"){
@@ -19,30 +19,30 @@ const TabsButton = () => {
 
     return (
         <div>
-            <div className="tabs tabs-box bg-[#1F242D] space-x-1 flex items-center ">
+            <div className="tabs tabs-box bg-[#1F242D] space-x-1 flex items-center rounded-xl p-4 ">
                     <input type="radio" name="my_tabs_6" className={` ${activeTab === "today" ? 'bg-[#151921] border border-[#232732] text-white ' : 'bg-[#1F242D]  text-white/80 ' } tab rounded-xl `} aria-label="Today's Plan" 
-                    defaultChecked
                     checked = {activeTab === "today"}
-                    onChange={()=> activeTab === 'saved' ? handleTabs() : ''}
+                    onChange={()=> activeTab === 'saved' && handleTabs()}
                     />
-                    <div className="tab-content text-white mt-6">
+                    {activeTab === "today" && (
+                    <div className="tab-content text-white mt-6 mb-2 flex flex-col gap-4">                       
                         
-                        <NothingHere/>
-                        <TodaysCard/>
-                        
+                        {todaysData.length > 0 ? todaysData.map((data)=>{ return <TodaysCard key={data.id} data={data}/>}) : <NothingHere/>}
+                                                                      
                     </div>
-
+                    )}
                     
                     <input type="radio" name="my_tabs_6" className={` ${activeTab === "saved" ? 'bg-[#151921] border border-[#232732] text-white ' : 'bg-[#1F242D] text-white/80 ' } tab rounded-xl  `} aria-label="Saved" 
                     checked = {activeTab === "saved"}
-                    onChange={()=> activeTab === 'today' ? handleTabs() : ''}
+                    onChange={()=> activeTab === 'today' && handleTabs()}
                     />
-                    <div className="tab-content text-white  mt-6">
+                    {activeTab === "saved" && (
+                    <div className="tab-content text-white mt-6 mb-2 flex flex-col gap-4">
                         
-                        <NothingHere/>
-                        <SavedCard/>
+                        {savedData.length > 0 ? savedData.map((data)=>{ return <SavedCard key={data.id} data={data}/>}) : <NothingHere/>}                       
                         
                     </div>
+                    )}
 
                 <div className='ms-auto pe-2'>
                     short
@@ -52,4 +52,4 @@ const TabsButton = () => {
     );
 };
 
-export default TabsButton;
+export default TabsButtons;

@@ -1,7 +1,7 @@
+import AddSaveButton from "../../buttons/AddSaveButton";
+import AddTodayButton from "../../buttons/AddTodayButton";
 import Image from 'next/image';
 import React from 'react';
-import { MdDateRange } from 'react-icons/md';
-import { RiSave3Line } from 'react-icons/ri';
 
 
 const fetchData = async ()=>{
@@ -12,23 +12,20 @@ const fetchData = async ()=>{
 
 const libaryDetails = async ({params}) => {
 
-    const getData = await fetchData();
-    console.log(getData, "getdata")
     const {libaryId} = await params
-    console.log(libaryId, "libaryId")
+    const getData = await fetchData();
     const data = getData.find((datas)=> datas.id == libaryId)
-    console.log(data)
 
     return (
-        <div className='bg-[#0D0D0D] text-white'>
-            <div className="flex flex-col md:flex-row gap-20 pt-5 pb-20 container max-w-320 mx-auto px-2">
+        <div className='bg-[#0D0D0D] text-white h-dvh'>
+            <div className="flex flex-col md:flex-row gap-20 pt-5 pb-20 container max-w-7xl mx-auto px-2">
                 <div className="overflow-hidden rounded-xl">
                     <Image
                     src={data.image}
                     alt={data.name}
                     width={300}
                     height={450}
-                    className="h-full min-h-[450px] w-full max-w-200 object-cover"
+                    className="h-full min-h-112.5 w-full max-w-200 object-cover"
                     />
                 </div>
 
@@ -85,15 +82,8 @@ const libaryDetails = async ({params}) => {
                     </ol>
 
                     <div className="mt-7 flex flex-col sm:flex-row max-sm:mx-auto gap-3">
-                        <button className="max-sm:w-[80vw] flex items-center justify-center gap-1 cursor-pointer rounded-lg bg-[#c7ff00] px-5 py-3 text-xs font-bold text-black transition ">
-                        <MdDateRange className='text-sm' /> 
-                        <p>Add to today's plan</p>
-                        </button>
-
-                        <button className="max-sm:w-[80vw] flex items-center justify-center gap-1 cursor-pointer rounded-lg border border-[#343b47] px-5 py-3 text-xs text-gray-300 transition hover:bg-[#191e27]">
-                            <RiSave3Line className='text-sm' /> 
-                            <p>Save for later</p>
-                        </button>
+                        <AddTodayButton data={data}/>
+                        <AddSaveButton data={data}/>
                     </div>
                 </div>
             </div>

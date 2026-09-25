@@ -2,6 +2,7 @@ import Image from 'next/image';
 import React from 'react';
 import heroImg from '../../assets/banner.png';
 
+
 const Hero = () => {
     return (
         <div className='container mx-auto py-12'>
@@ -17,7 +18,7 @@ const Hero = () => {
                         into today's plan, and watch the week's work add up.
                     </p>
                     <button className='text-start mt-2'>
-                        <a href="#library"
+                        <a href="#libary"
                         className='py-3 px-6 rounded-lg bg-[#C2F800] text-black text-sm font-medium uppercase'>
                             BROWSE WORKOUTS
                         </a>

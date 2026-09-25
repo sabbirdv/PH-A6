@@ -13,7 +13,7 @@ const Libary = async () => {
     const getData = await fetchData();
 
     return (
-        <div id='libary' className='container mx-auto w-250 pt-4 pb-16'>
+        <div id='libary' className='container mx-auto max-w-250 pt-4 pb-16 scroll-mt-20'>
             <div className='max-sm:text-center pb-8'>
                 <h2 className='uppercase text-2xl font-bold mb-1'>THE LIBARY</h2>
                 <p className='text-[#9CA3AF] text-sm'>Twelve lifts covering every major muscle group.</p>

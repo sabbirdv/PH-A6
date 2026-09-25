@@ -1,12 +1,14 @@
 'use client'
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from '../../assets/logo.png';
 import { usePathname } from 'next/navigation';
+import { GymContext } from '../context/MyPlanContext';
 
 
 const Nav = () => {
+    const {todayListCount, saveListCount} = useContext(GymContext)
     const pathname = usePathname()
     return (
         <div className='bg-black border-b border-[#1C1F26] sticky top-0 w-full'> 
@@ -47,8 +49,8 @@ const Nav = () => {
                     </ul>
                 </div>
                 <div className="navbar-end text-[#9CA3AF] text-sm font-medium flex items-center gap-2 sm:gap-6">
-                    <li className='flex items-center gap-2 font-medium'><Link href='/my-plan'>Plan </Link> <span className='size-5 rounded-full flex justify-center items-center font-bold text-black bg-[#C2F800]'>0</span></li>
-                    <li className='flex items-center gap-2 font-medium'><Link href='/my-plan'>Saved </Link> <span className='size-6 rounded-full flex justify-center items-center font-bold text-white border border-[#2D313B]'>0</span></li>
+                    <li className='flex items-center gap-2 font-medium'><Link href='/my-plan'>Plan </Link> <span className='size-5 rounded-full flex justify-center items-center font-bold text-black bg-[#C2F800]'>{todayListCount}</span></li>
+                    <li className='flex items-center gap-2 font-medium'><Link href='/my-plan'>Saved </Link> <span className='size-6 rounded-full flex justify-center items-center font-bold text-white border border-[#2D313B]'>{saveListCount}</span></li>
                 </div>
             </div>
         </div>
