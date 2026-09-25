@@ -14,7 +14,7 @@ const MyPlan = () => {
                     <h3 className='text-2xl font-bold'>MY PLAN</h3>
                     <p className='text-[#8A92A0] text-sm'>Cap of five lifts for today. Finish them, then load more.</p>
                 </div>
-                <div className='px-6 py-8 rounded-xl bg-[#13161D] border border-[#232732] flex justify-between items-center gap-5'>
+                <div className='px-6 py-8 rounded-xl bg-[#13161D] border border-[#232732] flex max-sm:text-center justify-between items-center gap-5'>
                     <div className='w-1/3 felx flex-col gap-2 items-center'>
                         <p className='text-xs text-[#8A92A0]'>Exercises</p>
                         <span className='text-3xl text-[#CCFF00] font-bold'>
@@ -36,7 +36,7 @@ const MyPlan = () => {
                         </span>
                     </div>
                 </div>
-
+                
                 <div>
                     <TabsButtons/>                
                 </div>

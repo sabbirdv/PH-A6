@@ -1,5 +1,5 @@
 'use client'
-import React, { useContext } from 'react';
+import React, { Suspense, useContext } from 'react';
 import { GymContext } from '../context/MyPlanContext';
 import NothingHere from '../cards/NothingHere';
 import TodaysCard from '../cards/TodaysCard';
@@ -24,6 +24,7 @@ const TabsButtons = () => {
                     checked = {activeTab === "today"}
                     onChange={()=> activeTab === 'saved' && handleTabs()}
                     />
+                    <Suspense fallback={<div className='flex justify-center'><p className="loading loading-spinner text-accent w-10 "></p></div>}>
                     {activeTab === "today" && (
                     <div className="tab-content text-white mt-6 mb-2 flex flex-col gap-4">                       
                         
@@ -31,11 +32,13 @@ const TabsButtons = () => {
                                                                       
                     </div>
                     )}
+                    </Suspense>
                     
                     <input type="radio" name="my_tabs_6" className={` ${activeTab === "saved" ? 'bg-[#151921] border border-[#232732] text-white ' : 'bg-[#1F242D] text-white/80 ' } tab rounded-xl  `} aria-label="Saved" 
                     checked = {activeTab === "saved"}
                     onChange={()=> activeTab === 'today' && handleTabs()}
                     />
+                    <Suspense fallback={<div className='flex justify-center'><p className="loading loading-spinner text-accent w-10 "></p></div>}>
                     {activeTab === "saved" && (
                     <div className="tab-content text-white mt-6 mb-2 flex flex-col gap-4">
                         
@@ -43,6 +46,7 @@ const TabsButtons = () => {
                         
                     </div>
                     )}
+                    </Suspense>
 
                 <div className='ms-auto pe-2'>
                     short

@@ -1,7 +1,7 @@
 import AddSaveButton from "../../buttons/AddSaveButton";
 import AddTodayButton from "../../buttons/AddTodayButton";
 import Image from 'next/image';
-import React from 'react';
+import React, { Suspense } from 'react';
 
 
 const fetchData = async ()=>{
@@ -17,7 +17,8 @@ const libaryDetails = async ({params}) => {
     const data = getData.find((datas)=> datas.id == libaryId)
 
     return (
-        <div className='bg-[#0D0D0D] text-white h-dvh'>
+        <div className='bg-[#0D0D0D] text-white min-h-dvh'>
+            <Suspense fallback={<div className='flex justify-center'><p className="loading loading-spinner text-accent w-10 "></p></div>}>
             <div className="flex flex-col md:flex-row gap-20 pt-5 pb-20 container max-w-7xl mx-auto px-2">
                 <div className="overflow-hidden rounded-xl">
                     <Image
@@ -87,6 +88,7 @@ const libaryDetails = async ({params}) => {
                     </div>
                 </div>
             </div>
+            </Suspense>
         </div>
     );
 };

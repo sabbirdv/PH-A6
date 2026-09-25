@@ -11,7 +11,7 @@ const Nav = () => {
     const {todayListCount, saveListCount} = useContext(GymContext)
     const pathname = usePathname()
     return (
-        <div className='bg-black border-b border-[#1C1F26] sticky top-0 w-full'> 
+        <div className='bg-black border-b border-[#1C1F26] sticky top-0 w-full z-10'> 
             <div className='h-20 navbar shadow-sm flex gap-5 items-center justify-center container mx-auto'>
                 <div className="navbar-start lg:hidden">
                     <div className="dropdown">

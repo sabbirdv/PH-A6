@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import LibaryCard from '../cards/LibaryCard';
 
 
@@ -18,6 +18,7 @@ const Libary = async () => {
                 <h2 className='uppercase text-2xl font-bold mb-1'>THE LIBARY</h2>
                 <p className='text-[#9CA3AF] text-sm'>Twelve lifts covering every major muscle group.</p>
             </div>
+            <Suspense fallback={<div className='flex justify-center'><p className="loading loading-spinner text-accent w-10 "></p></div>}>
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center'>
                 {
                     getData.map((data)=>{
@@ -27,6 +28,7 @@ const Libary = async () => {
                     })
                 }
             </div>
+            </Suspense>
         </div>
     );
 };
