@@ -8,7 +8,7 @@ const MyPlan = () => {
     const {todaysData, savedData, activeTab} = useContext(GymContext)
 
     return (
-        <div className='bg-[#0D0D0D] text-white py-10 h-dvh '>
+        <div className='bg-[#0D0D0D] text-white py-10 min-h-dvh '>
             <div className=' container max-w-7xl mx-auto px-2 flex flex-col justify-center gap-6'>
                 <div className='max-sm:text-center'>
                     <h3 className='text-2xl font-bold'>MY PLAN</h3>
