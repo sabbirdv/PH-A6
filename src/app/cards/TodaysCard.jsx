@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { GymContext } from '../context/MyPlanContext';
 import { IoMdCheckmark } from 'react-icons/io';
 import { IoClose, IoTimeOutline } from 'react-icons/io5';

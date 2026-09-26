@@ -6,7 +6,7 @@ import logo from '../../assets/logo.png';
 const Footer = () => {
     return (
         <div className='bg-black py-10 border-t border-[#1C1F26] z-10' >
-            <div className=' container mx-auto px-2 flex items-center justify-between'>
+            <div className=' container mx-auto px-5 flex items-center justify-between '>
                 <Link href='/' className='flex items-center gap-2 text-sm text-white font-extrabold'>
                     <Image
                         src={logo}

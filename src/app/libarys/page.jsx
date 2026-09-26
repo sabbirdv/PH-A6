@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+
 import LibaryCard from '../cards/LibaryCard';
 
 
@@ -13,12 +13,11 @@ const Libary = async () => {
     const getData = await fetchData();
 
     return (
-        <div id='libary' className='container mx-auto max-w-250 pt-4 pb-16 scroll-mt-20'>
+        <div id='libary' className='container mx-auto max-w-250 pt-4 pb-16 px-5 scroll-mt-20'>
             <div className='max-sm:text-center pb-8'>
                 <h2 className='uppercase text-2xl font-bold mb-1'>THE LIBARY</h2>
                 <p className='text-[#9CA3AF] text-sm'>Twelve lifts covering every major muscle group.</p>
             </div>
-            <Suspense fallback={<div className='flex justify-center'><p className="loading loading-spinner text-accent w-10 "></p></div>}>
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center'>
                 {
                     getData.map((data)=>{
@@ -28,7 +27,6 @@ const Libary = async () => {
                     })
                 }
             </div>
-            </Suspense>
         </div>
     );
 };

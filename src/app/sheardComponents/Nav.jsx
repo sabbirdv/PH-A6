@@ -12,7 +12,7 @@ const Nav = () => {
     const pathname = usePathname()
     return (
         <div className='bg-black/80 backdrop-blur-lg border-b border-[#1C1F26] sticky top-0 w-full z-10 '> 
-            <div className='min-h-20 navbar shadow-sm flex gap-5 items-center justify-center container mx-auto '>
+            <div className='min-h-20 navbar shadow-sm flex gap-5 items-center justify-center container mx-auto px-5 '>
                 <div className="navbar-start lg:hidden">
                     <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn bg-black border border-[#C2F800]/50 shadow-none ">

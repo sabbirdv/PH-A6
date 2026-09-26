@@ -37,7 +37,7 @@ const TabsButtons = () => {
 
     return (
         <div>
-            <div className="tabs tabs-box bg-[#1F242D] space-x-1 flex flex-wrap gap-5 items-center rounded-xl p-4 ">
+            <div className="tabs tabs-box bg-[#1F242D] space-x-1 flex flex-wrap gap-y-5 items-center rounded-xl p-4 ">
                     <input type="radio" name="my_tabs_6" className={` ${activeTab === "today" ? 'bg-[#151921] border border-[#232732] text-white ' : 'bg-[#1F242D]  text-white/80 ' } tab rounded-xl `} aria-label="Today's Plan" 
                     checked = {activeTab === "today"}
                     onChange={()=> activeTab === 'saved' && handleTabs()}
@@ -62,8 +62,8 @@ const TabsButtons = () => {
                     </div>
                     )}
 
-                <div className='flex items-center gap-2 sm:ms-auto pe-2'>
-                    <span className='text-nowrap text-white/80'>Sort By</span>
+                <div className='flex items-center gap-2 sm:ms-auto pe-2 ps-2'>
+                    <span className='text-nowrap text-sm text-white/80'>Sort By</span>
                     <select 
                     defaultValue='duration'
                     onChange={(e)=> setFilter(e.target.value)}

@@ -8,11 +8,11 @@ import { IoTimeOutline } from "react-icons/io5";
 const LibaryCard = ({data}) => {
     return (
         <Link href={`/libarys/${data.id}`}>
-            <div className="w-65 overflow-hidden rounded-2xl border border-[#292e35] hover:border-[#C2F800] bg-[#15181e] shadow-lg cursor-pointer">
+            <div className="min-w-70 overflow-hidden rounded-2xl border border-[#292e35] hover:border-[#C2F800] bg-[#15181e] shadow-lg cursor-pointer">
                 <Image
                     src= {data.image}
                     height={153}
-                    width={153}
+                    width={250}
                     alt="Barbell Bench Press"
                     className="w-full object-cover"
                 />
