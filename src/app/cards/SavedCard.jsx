@@ -6,6 +6,7 @@ import { AiFillFire } from 'react-icons/ai';
 import { FaRegStar } from 'react-icons/fa';
 import Link from 'next/link';
 import Image from 'next/image';
+import { toast } from 'react-toastify';
 
 const SavedCard = ({ data }) => {
 
@@ -15,6 +16,10 @@ const SavedCard = ({ data }) => {
         setSavedData(
             savedData.filter((element) => element.id !== data.id)
         );
+        toast.info(`${data.name} removed`, {
+                    position: "bottom-right",
+                    autoClose: 1000,
+                })
     };
 
     return (

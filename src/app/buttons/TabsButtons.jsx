@@ -49,7 +49,12 @@ const TabsButtons = () => {
                     </Suspense>
 
                 <div className='ms-auto pe-2'>
-                    short
+                    <select defaultValue="Pick a color" className="select bg-[#13161D] border border-[#151921] rounded-xl min-w-30 ">
+                        <option disabled={true}>Pick a color</option>
+                        <option>Crimson</option>
+                        <option>Amber</option>
+                        <option>Velvet</option>
+                    </select>
                 </div>
             </div>
         </div>

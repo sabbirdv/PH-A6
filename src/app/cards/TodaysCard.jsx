@@ -8,13 +8,27 @@ import { AiFillFire } from 'react-icons/ai';
 import { FaRegStar } from 'react-icons/fa';
 import Link from 'next/link';
 import Image from 'next/image';
+import { toast } from 'react-toastify';
 
 const TodaysCard = ({ data }) => {
     const { todaysData, setTodaysData } = useContext(GymContext);
+    const handleMarkButton = () => {
+        setTodaysData(
+            todaysData.filter((element) => element.id !== data.id)
+        );
+        toast.success(`${data.name} mark as done`, {
+                            position: "bottom-right",
+                            autoClose: 1000,
+                        })
+    };
     const handleCloseButton = () => {
         setTodaysData(
             todaysData.filter((element) => element.id !== data.id)
         );
+        toast.info(`${data.name} removed`, {
+                            position: "bottom-right",
+                            autoClose: 1000,
+                        })
     };
 
     return (
@@ -67,7 +81,9 @@ const TodaysCard = ({ data }) => {
                     </Link>
 
                     <button
-                        className="btn flex items-center gap-1 px-4 py-2 rounded-full bg-[#C6FF00] text-black text-sm font-semibold cursor-pointer shadow-none border-none disabled:bg-gray-300 whitespace-nowrap">
+                        className="btn flex items-center gap-1 px-4 py-2 rounded-full bg-[#C6FF00] text-black text-sm font-semibold cursor-pointer shadow-none border-none disabled:bg-gray-300 whitespace-nowrap"
+                        onClick={()=>handleMarkButton()}
+                        >
                         <IoMdCheckmark />
                         <span>Mark as Done</span>
                     </button>
