@@ -1,6 +1,6 @@
 # FitLog
 
-* FitLog is a simple workout library website. Users can browse workouts, see workout details, add workouts to today's plan, and save workouts for later.
+FitLog is a simple workout library website. Users can browse workouts, see workout details, add workouts to today's plan, and save workouts for later.
 
 
 ## Technologies
