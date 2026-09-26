@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
       data-theme='light'
       className={`${inter.className} h-full antialiased scroll-smooth`}
     >
-      <body className="min-h-full flex flex-col ">
+      <body className="min-h-full flex flex-col bg-[#0D0D0D] ">
         <MyPlanContext>
         
         <Nav/>
