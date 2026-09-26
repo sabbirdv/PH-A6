@@ -17,7 +17,7 @@ const TabsButtons = () => {
         }
     }
 
-    const [filter , setFilter] = useState('sort by');
+    const [filter , setFilter] = useState('duration');
 
     const filterdList = (data)=>{
         const filterd = [...data]
@@ -37,7 +37,7 @@ const TabsButtons = () => {
 
     return (
         <div>
-            <div className="tabs tabs-box bg-[#1F242D] space-x-1 flex items-center rounded-xl p-4 ">
+            <div className="tabs tabs-box bg-[#1F242D] space-x-1 flex flex-wrap gap-5 items-center rounded-xl p-4 ">
                     <input type="radio" name="my_tabs_6" className={` ${activeTab === "today" ? 'bg-[#151921] border border-[#232732] text-white ' : 'bg-[#1F242D]  text-white/80 ' } tab rounded-xl `} aria-label="Today's Plan" 
                     checked = {activeTab === "today"}
                     onChange={()=> activeTab === 'saved' && handleTabs()}
@@ -62,16 +62,16 @@ const TabsButtons = () => {
                     </div>
                     )}
 
-                <div className='ms-auto pe-2'>
+                <div className='flex items-center gap-2 sm:ms-auto pe-2'>
+                    <span className='text-nowrap text-white/80'>Sort By</span>
                     <select 
-                    defaultValue='sort by'
+                    defaultValue='duration'
                     onChange={(e)=> setFilter(e.target.value)}
-                    className="select bg-[#13161D] border border-[#151921] rounded-xl min-w-30 outline-none"
+                    className="select bg-[#13161D] border border-[#151921] rounded-xl min-w-15 outline-none"
                     >
-                        <option value={'sort by'} disabled={true}>Sort by</option>
-                        <option value={'rating'}>Rating</option>
-                        <option value={'caloriesBurned'}>Calories</option>
                         <option value={'duration'}>Duration</option>
+                        <option value={'caloriesBurned'}>Calories</option>
+                        <option value={'rating'}>Rating</option>
                     </select>
                 </div>
             </div>
